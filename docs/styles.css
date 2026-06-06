@@ -183,6 +183,59 @@ h1 {
   color: var(--muted);
 }
 
+.try-section {
+  display: grid;
+  gap: 18px;
+  background: #101828;
+  border-color: #263246;
+  color: #fff;
+  overflow: hidden;
+}
+
+.try-section h2 {
+  color: #fff;
+}
+
+.try-section .muted {
+  color: #cfd7e6;
+}
+
+.try-section .badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+.try-section .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.try-copy {
+  order: 2;
+  max-width: 520px;
+}
+
+.try-frame-wrap {
+  order: 1;
+  width: 100%;
+  height: min(780px, 92vh);
+  min-height: 680px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0b1220;
+}
+
+.try-frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #101828;
+}
+
 .shots {
   margin-top: 12px;
   display: grid;
@@ -247,5 +300,16 @@ h1 {
 
   .site {
     padding-top: 24px;
+  }
+
+  .try-section {
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    padding: 22px;
+  }
+
+  .try-copy,
+  .try-frame-wrap {
+    order: initial;
   }
 }
