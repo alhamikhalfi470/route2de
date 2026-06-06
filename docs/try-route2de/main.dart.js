@@ -132155,9 +132155,9 @@ G(a){var s=null,r=A.bus().ga9y().h(0,"embed")==="1",q=A.z(a),p=q.ok.wx(B.X,B.X,"
 p=r?B.y2:B.aW
 return new A.fL(o,A.dA(s,p,r?B.bvR:A.dr(!0,A.fI(this.akE(a),s,B.aH,B.b0,s,B.aV),B.ar,!0),s,!1),s)},
 akE(a){return A.IM(new A.aTP(this,A.z(a)))},
-WP(a){var s="Try Route2DE",r=null,q=this.NW("Route2DE ausprobieren",s,s),p=this.NW("Teste Route2DE wie die echte App.","Try Route2DE like the real app.","Coba Route2DE seperti app asli."),o=a.ok,n=o.e
+WP(a){var s="Try Route2DE",r=null,q=this.NW("Route2DE ausprobieren",s,s),p=this.NW("Entdecke die Route2DE Experience.","Explore the Route2DE experience.","Jelajahi pengalaman Route2DE."),o=a.ok,n=o.e
 p=A.r(p,r,r,r,r,r,n==null?r:n.Hl(B.D,B.cJ,1.18),r,r)
-n=this.NW("Dieser Emulator fokussiert das Feature, das wir verkaufen: Nutzer koennen Ausbildungsfelder entdecken, Felddetails oeffnen und den Self-Fit-Check im App-Flow testen.","This emulator focuses on the feature we sell: users can explore Ausbildung fields, open field details, then try the Self Fit Check inside the app flow.","Emulator ini menampilkan fitur yang kita jual: calon user bisa explore bidang Ausbildung, masuk ke detail bidang, lalu mencoba Self Fit Check di dalam flow app.")
+n=this.NW("Sieh dir an, wie Route2DE Nutzer:innen dabei hilft, passende Ausbildungsfelder zu entdecken, Felddetails zu oeffnen und den Self-Fit-Check ohne Login zu durchlaufen.","See how Route2DE helps users discover relevant Ausbildung fields, open field details, and run the Self Fit Check without logging in.","Lihat bagaimana Route2DE membantu pengguna mengenali bidang Ausbildung yang relevan, membuka detail bidang, dan menjalankan Self Fit Check tanpa perlu login.")
 o=o.z
 return A.ak(A.b([new A.aff(B.R3,q,r),B.ax,p,B.ab,A.r(n,r,r,r,r,r,o==null?r:o.hf(B.a1Z,1.55),r,r)],t.p),B.O,B.y,B.bk)}}
 A.aTP.prototype={
