@@ -220,11 +220,13 @@ h1 {
 .try-frame-wrap {
   order: 1;
   width: 100%;
-  height: min(780px, 92vh);
-  min-height: 680px;
+  height: clamp(600px, 78vh, 700px);
+  min-height: 600px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 18px;
   overflow: hidden;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
   background: #0b1220;
 }
 
@@ -234,6 +236,7 @@ h1 {
   height: 100%;
   border: 0;
   background: #101828;
+  overscroll-behavior: contain;
 }
 
 .shots {
