@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Try the Route2DE interactive demo.">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -29,10 +29,139 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>route2de_app</title>
+  <title>Route2DE Demo</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background: #0b1220;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .route2de-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(15, 118, 110, 0.2), transparent 32%),
+        linear-gradient(180deg, #111827 0%, #0b1220 100%);
+      color: #fff;
+      transition: opacity 220ms ease, visibility 220ms ease;
+    }
+
+    html.route2de-ready .route2de-loader {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .route2de-loader-card {
+      width: min(280px, 100%);
+      text-align: center;
+    }
+
+    .route2de-loader-mark {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: #0f766e;
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      box-shadow: 0 18px 38px rgba(15, 118, 110, 0.28);
+    }
+
+    .route2de-loader-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .route2de-loader-text {
+      margin: 7px 0 18px;
+      color: #cfd7e6;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .route2de-loader-bars {
+      display: grid;
+      gap: 8px;
+    }
+
+    .route2de-loader-bars span {
+      height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.12));
+      background-size: 220% 100%;
+      animation: route2de-loading 1.1s ease-in-out infinite;
+    }
+
+    .route2de-loader-bars span:nth-child(2) {
+      width: 82%;
+      margin: 0 auto;
+      animation-delay: 120ms;
+    }
+
+    .route2de-loader-bars span:nth-child(3) {
+      width: 64%;
+      margin: 0 auto;
+      animation-delay: 240ms;
+    }
+
+    @keyframes route2de-loading {
+      0% {
+        background-position: 120% 0;
+      }
+
+      100% {
+        background-position: -120% 0;
+      }
+    }
+  </style>
 </head>
 <body>
+  <div class="route2de-loader" aria-label="Route2DE demo is loading">
+    <div class="route2de-loader-card">
+      <div class="route2de-loader-mark">R2</div>
+      <p class="route2de-loader-title">Loading Route2DE demo</p>
+      <p class="route2de-loader-text">Preparing the interactive experience.</p>
+      <div class="route2de-loader-bars">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const markReady = () => document.documentElement.classList.add('route2de-ready');
+      const start = Date.now();
+      const waitForFlutter = () => {
+        const hasFlutterView = document.querySelector('flt-glass-pane, flutter-view, canvas');
+        if (hasFlutterView) {
+          window.setTimeout(markReady, 600);
+          return;
+        }
+        if (Date.now() - start > 12000) {
+          markReady();
+          return;
+        }
+        window.requestAnimationFrame(waitForFlutter);
+      };
+
+      window.addEventListener('load', waitForFlutter);
+    })();
+  </script>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>

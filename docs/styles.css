@@ -218,6 +218,7 @@ h1 {
 }
 
 .try-frame-wrap {
+  position: relative;
   order: 1;
   width: 100%;
   height: clamp(600px, 78vh, 700px);
@@ -230,6 +231,80 @@ h1 {
   background: #0b1220;
 }
 
+.try-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(15, 118, 110, 0.18), transparent 30%),
+    linear-gradient(180deg, #111827 0%, #0b1220 100%);
+  color: #fff;
+  transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.try-frame-wrap.is-loaded .try-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.try-loader-card {
+  width: min(280px, 100%);
+  text-align: center;
+}
+
+.try-loader-mark {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: #0f766e;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.try-loader-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.try-loader-text {
+  margin: 6px 0 18px;
+  color: #cfd7e6;
+  font-size: 0.92rem;
+}
+
+.try-loader-bars {
+  display: grid;
+  gap: 8px;
+}
+
+.try-loader-bars span {
+  height: 9px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.12));
+  background-size: 220% 100%;
+  animation: try-loading 1.1s ease-in-out infinite;
+}
+
+.try-loader-bars span:nth-child(2) {
+  width: 82%;
+  margin: 0 auto;
+  animation-delay: 120ms;
+}
+
+.try-loader-bars span:nth-child(3) {
+  width: 64%;
+  margin: 0 auto;
+  animation-delay: 240ms;
+}
+
 .try-frame {
   display: block;
   width: 100%;
@@ -237,6 +312,15 @@ h1 {
   border: 0;
   background: #101828;
   overscroll-behavior: contain;
+}
+
+@keyframes try-loading {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
 }
 
 .shots {

@@ -10,7 +10,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://route2de.com/de/" />
     <meta property="og:image" content="https://route2de.com/assets/app-icon.png" />
-    <link rel="stylesheet" href="../styles.css?v=try-scroll-1" />
+    <link rel="preload" href="../try-route2de/main.dart.js" as="script" />
+    <link rel="stylesheet" href="../styles.css?v=try-loader-1" />
   </head>
   <body>
     <main class="site">
@@ -67,11 +68,24 @@
           </div>
         </div>
         <div class="try-frame-wrap" aria-label="Try Route2DE Emulator">
+          <div class="try-loader" aria-hidden="true">
+            <div class="try-loader-card">
+              <div class="try-loader-mark">R2</div>
+              <p class="try-loader-title">Route2DE-Demo wird geladen</p>
+              <p class="try-loader-text">Der interaktive Emulator wird vorbereitet.</p>
+              <div class="try-loader-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
           <iframe
             class="try-frame"
             title="Try Route2DE App Demo"
             src="../try-route2de/?embed=1"
-            loading="lazy"
+            loading="eager"
+            onload="this.closest('.try-frame-wrap').classList.add('is-loaded')"
           ></iframe>
         </div>
       </section>

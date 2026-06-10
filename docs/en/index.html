@@ -10,7 +10,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://route2de.com/en/" />
     <meta property="og:image" content="https://route2de.com/assets/app-icon.png" />
-    <link rel="stylesheet" href="../styles.css?v=try-scroll-1" />
+    <link rel="preload" href="../try-route2de/main.dart.js" as="script" />
+    <link rel="stylesheet" href="../styles.css?v=try-loader-1" />
   </head>
   <body>
     <main class="site">
@@ -30,7 +31,7 @@
         <p>An app for Indonesians who want to pursue the legal route to Germany, starting with an Ausbildung readiness test.</p>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://apps.apple.com/" target="_blank" rel="noopener">Download on the App Store</a>
-          <a class="btn btn-secondary" href="mailto:support@route2de.com">Contact Support</a>
+          <a class="btn btn-secondary" href="#try-route2de">Try Demo</a>
         </div>
       </section>
 
@@ -66,11 +67,24 @@
           </div>
         </div>
         <div class="try-frame-wrap" aria-label="Try Route2DE emulator">
+          <div class="try-loader" aria-hidden="true">
+            <div class="try-loader-card">
+              <div class="try-loader-mark">R2</div>
+              <p class="try-loader-title">Loading Route2DE demo</p>
+              <p class="try-loader-text">Preparing the interactive emulator.</p>
+              <div class="try-loader-bars">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
           <iframe
             class="try-frame"
             title="Try Route2DE app demo"
             src="../try-route2de/?embed=1"
-            loading="lazy"
+            loading="eager"
+            onload="this.closest('.try-frame-wrap').classList.add('is-loaded')"
           ></iframe>
         </div>
       </section>
@@ -84,7 +98,7 @@
         <h2>Start now</h2>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://apps.apple.com/" target="_blank" rel="noopener">Download on the App Store</a>
-          <a class="btn btn-secondary" href="mailto:support@route2de.com">Contact Support</a>
+          <a class="btn btn-secondary" href="#try-route2de">Try Demo</a>
         </div>
       </section>
 
